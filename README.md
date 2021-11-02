@@ -167,3 +167,22 @@
 
     rspec ./spec/point_spec.rb:11 # Point Se debe poder acceder a las coordenadas con los getters
 
+9. Se arregla el fallo que produce la cuarta prueba:
+
+    $cat lib/point.rb
+    class Point
+      attr_reader :x, :y
+      def initialize(x,y)
+        @x,@y= x, y
+      end
+    end
+
+    $rspec spec/point\_spec.rb --format doc
+    Point
+      Se instancia un punto con coordenadas x, y
+      Se debe poder acceder a las coordenadas con los getters
+
+    Finished in 0.00298 seconds (files took 0.1688 seconds to load)
+    2 examples, 0 failures
+
+
