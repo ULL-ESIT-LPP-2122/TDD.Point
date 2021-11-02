@@ -12,4 +12,7 @@ describe Point do
     expect(Point.new(0,0).x).to eq(0) 
     expect(Point.new(0,0).y).to eq(0) 
   end
+  it "El formato del punto sera (x,y)" do
+    expect(Point.new(0,0).to_s).to eq("(0,0)")
+  end
 end
