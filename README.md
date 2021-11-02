@@ -26,3 +26,15 @@
     Finished in 0.00004 seconds (files took 0.18816 seconds to load)
     0 examples, 0 failures, 1 error occurred outside of examples
 
+4. Se arregla el fallo que produce la primera prueba:
+    $touch lib/point.rb
+
+    $rspec spec/point\_spec-rb
+
+    No examples found.
+
+
+    Finished in 0.0006 seconds (files took 0.16118 seconds to load)
+    0 examples, 0 failures
+    
+    
