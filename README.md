@@ -74,7 +74,6 @@
 
 7. Debe existir una forma de inicializar un punto (tercera prueba):
 
-
     $cat spec/point\_spec.rb
     require 'point'
 
@@ -126,4 +125,45 @@
 
     Finished in 0.00268 seconds (files took 0.16168 seconds to load)
     1 example, 0 failures
+
+9. Debe existir una forma de acceder a las coordenadas de un punto (cuarta prueba):
+   
+    $cat spec/point\_spec.rb
+    require 'point'
+
+    # Permite agrupar pruebas
+    describe Point do
+
+      # Descrbe la prueba 
+      it "Se instancia un punto con coordenadas x, y" do
+      # Define la expectativa
+        expect(Point.new(0,0)).not_to eq(nil) #matcher
+      end
+      it "Se debe poder acceder a las coordenadas con los getters" do
+        expect(Point.new(0,0).x).to eq(0) 
+        expect(Point.new(0,0).y).to eq(1) 
+      end
+    end
+
+    $rspec spec/point\_spec.rb --format doc
+
+    Point
+      Se instancia un punto con coordenadas x, y
+      Se debe poder acceder a las coordenadas con los getters (FAILED - 1)
+
+    Failures:
+
+    1) Point Se debe poder acceder a las coordenadas con los getters
+       Failure/Error: expect(Point.new(0,0).x).to eq(0)
+
+       NoMethodError:
+       undefined method `x' for #<Point:0x0000555f34ecd338 @x=0, @y=0>
+       # ./spec/point_spec.rb:12:in `block (2 levels) in <top (required)>'
+
+    Finished in 0.00306 seconds (files took 0.15878 seconds to load)
+    2 examples, 1 failure
+
+    Failed examples:
+
+    rspec ./spec/point_spec.rb:11 # Point Se debe poder acceder a las coordenadas con los getters
 
