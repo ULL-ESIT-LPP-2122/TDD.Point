@@ -10,7 +10,7 @@
     $cat spec/point\_spec.rb
     require 'point'
 
-    $rspec spec/point\_spec-rb
+    $rspec spec/point\_spec.rb
    
     An error occurred while loading ./spec/point_spec.rb. - Did you mean?
                     rspec ./spec/spec_helper.rb
@@ -29,7 +29,7 @@
 4. Se arregla el fallo que produce la primera prueba:
     $touch lib/point.rb
 
-    $rspec spec/point\_spec-rb
+    $rspec spec/point\_spec.rb
 
     No examples found.
 
@@ -45,7 +45,7 @@
     describe Point do
     end
 
-    $rspec spec/point\_spec-rb
+    $rspec spec/point\_spec.rb
     An error occurred while loading ./spec/point_spec.rb.
     Failure/Error:
     describe Point do
@@ -59,4 +59,16 @@
 
     Finished in 0.00004 seconds (files took 0.17896 seconds to load)
     0 examples, 0 failures, 1 error occurred outside of examples
+
+6. Se arregla el fallo que produce la segunda prueba:
+
+    $cat lib/point.rb
+    class Point
+    end
+    $rspec spec/point\_spec.rb
+    No examples found.
+
+
+    Finished in 0.0004 seconds (files took 0.16054 seconds to load)
+    0 examples, 0 failures
 
