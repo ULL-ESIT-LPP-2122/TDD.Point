@@ -72,3 +72,40 @@
     Finished in 0.0004 seconds (files took 0.16054 seconds to load)
     0 examples, 0 failures
 
+7. Debe existir una forma de inicializar un punto (tercera prueba):
+
+
+    $cat spec/point\_spec.rb
+    require 'point'
+
+    # Permite agrupar pruebas
+    describe Point do
+
+      # Descrbe la prueba 
+      it "Se instancia un punto con coordenadas x, y" do
+         # Define la expectativa
+         expect(Point.new(0,0)).not_to eq(nil) #matcher
+      end
+    end
+
+    $rspec spec/point\_spec.rb
+    F
+
+    Failures:
+
+    1) Point Se instancia un punto con coordenadas x, y
+       Failure/Error: expect(Point.new(0,0)).not_to eq(nil) #matcher
+
+       ArgumentError:
+         wrong number of arguments (given 2, expected 0)
+       # ./spec/point_spec.rb:9:in `initialize'
+       # ./spec/point_spec.rb:9:in `new'
+       # ./spec/point_spec.rb:9:in `block (2 levels) in <top (required)>'
+
+    Finished in 0.00493 seconds (files took 0.14996 seconds to load)
+    1 example, 1 failure
+
+    Failed examples:
+
+    rspec ./spec/point_spec.rb:7 # Point Se instancia un punto con coordenadas x, y
+
