@@ -232,3 +232,26 @@
 
        rspec ./spec/point_spec.rb:15 # Point El formato del punto sera (x,y)
 
+10. Se arregla el fallo que produce la quinta prueba:
+
+    $cat lib/point.rb
+
+    class Point
+      attr_reader :x, :y
+      def initialize(x,y)
+        @x,@y= x, y
+      end
+      def to_s
+        "(#{@x},#{@y})"
+      end
+    end
+
+    $rspec spec/point\_spec.rb --format doc
+    Point
+      Se instancia un punto con coordenadas x, y
+      Se debe poder acceder a las coordenadas con los getters
+      El formato del punto sera (x,y)
+
+      Finished in 0.00307 seconds (files took 0.15437 seconds to load)
+      3 examples, 0 failures
+
