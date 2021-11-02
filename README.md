@@ -185,4 +185,50 @@
     Finished in 0.00298 seconds (files took 0.1688 seconds to load)
     2 examples, 0 failures
 
+10. Debe existir una forma de representar un punto como una cadena (quinta prueba):
+
+    $cat spec/point\_spec.rb
+
+    require 'point'
+
+    # Permite agrupar pruebas
+    describe Point do
+
+    # Descrbe la prueba 
+      it "Se instancia un punto con coordenadas x, y" do
+        # Define la expectativa
+        expect(Point.new(0,0)).not_to eq(nil) #matcher
+      end
+      it "Se debe poder acceder a las coordenadas con los getters" do
+        expect(Point.new(0,0).x).to eq(0) 
+        expect(Point.new(0,0).y).to eq(0) 
+      end
+      it "El formato del punto sera (x,y)" do
+        expect(Point.new(0,0).to_s).to eq("(0,0)")
+      end
+    end
+
+    $rspec spec/point\_spec.rb --format doc
+    Point
+      Se instancia un punto con coordenadas x, y
+      Se debe poder acceder a las coordenadas con los getters
+      El formato del punto sera (x,y) (FAILED - 1)
+
+      Failures:
+
+      1) Point El formato del punto sera (x,y)
+         Failure/Error: expect(Point.new(0,0).to_s).to eq("(0,0)")
+
+         expected: "(0,0)"
+            got: "#<Point:0x00005585672f47b0>"
+
+       (compared using ==)
+       # ./spec/point_spec.rb:16:in `block (2 levels) in <top (required)>'
+
+       Finished in 0.0275 seconds (files took 0.16281 seconds to load)
+       3 examples, 1 failure
+
+       Failed examples:
+
+       rspec ./spec/point_spec.rb:15 # Point El formato del punto sera (x,y)
 
