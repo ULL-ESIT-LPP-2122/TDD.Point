@@ -37,4 +37,26 @@
     Finished in 0.0006 seconds (files took 0.16118 seconds to load)
     0 examples, 0 failures
     
-    
+5. Debe existir una clase para representar un punto:
+       
+    $cat spec/point\_spec.rb
+    require 'point'
+
+    describe Point do
+    end
+
+    $rspec spec/point\_spec-rb
+    An error occurred while loading ./spec/point_spec.rb.
+    Failure/Error:
+    describe Point do
+    end
+
+    NameError:
+    uninitialized constant Point
+    # ./spec/point_spec.rb:3:in `<top (required)>'
+    No examples found.
+
+
+    Finished in 0.00004 seconds (files took 0.17896 seconds to load)
+    0 examples, 0 failures, 1 error occurred outside of examples
+
