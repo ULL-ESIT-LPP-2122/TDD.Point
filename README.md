@@ -109,3 +109,21 @@
 
     rspec ./spec/point_spec.rb:7 # Point Se instancia un punto con coordenadas x, y
 
+8. Se arregla el fallo que produce la tercera prueba:
+
+    $cat lib/point.rb
+    class Point
+      def initialize(x,y)
+        @x,@y = x,y
+      end
+    end
+
+    
+    $rspec spec/point\_spec.rb --format doc
+
+    Point
+      Se instancia un punto con coordenadas x, y
+
+    Finished in 0.00268 seconds (files took 0.16168 seconds to load)
+    1 example, 0 failures
+
