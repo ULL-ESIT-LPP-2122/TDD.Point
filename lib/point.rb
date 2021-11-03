@@ -9,4 +9,7 @@ class Point
   def * (valor)
     Point.new(@x * valor, @y * valor)
   end
+  def + (otro)
+    Point.new(@x + otro.x, @y + otro.y)
+  end
 end
