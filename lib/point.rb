@@ -6,4 +6,7 @@ class Point
   def to_s
     "(#{@x},#{@y})"
   end
+  def * (valor)
+    Point.new(@x * valor, @y * valor)
+  end
 end
