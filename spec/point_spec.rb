@@ -3,7 +3,7 @@ require 'point'
 # Permite agrupar pruebas
 describe Point do
 
-  # Descrbe la prueba 
+  # Describe la prueba 
   it "Se instancia un punto con coordenadas x, y" do
     # Define la expectativa
     expect(Point.new(0,0)).not_to eq(nil) #matcher
@@ -15,4 +15,8 @@ describe Point do
   it "El formato del punto sera (x,y)" do
     expect(Point.new(0,0).to_s).to eq("(0,0)")
   end
+  it "Se debe de poder multiplicar un punto por un escalar" do
+    expect((Point.new(1,1) * 5).to_s).to eq("(5,5)")
+  end
+
 end
