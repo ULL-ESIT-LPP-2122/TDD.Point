@@ -18,5 +18,8 @@ describe Point do
   it "Se debe de poder multiplicar un punto por un escalar" do
     expect((Point.new(1,1) * 5).to_s).to eq("(5,5)")
   end
+  it "Se deben de poder sumar dos puntos" do
+    expect((Point.new(1,1) + Point.new(4,4)).to_s).to eq("(5,5)")
+  end
 
 end
