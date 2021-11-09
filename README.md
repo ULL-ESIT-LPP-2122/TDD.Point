@@ -19,7 +19,7 @@
 
     LoadError:
     cannot load such file -- point
-    # ./spec/point_spec.rb:1:in `<top (required)>'
+    \# ./spec/point_spec.rb:1:in `<top (required)>'
     No examples found.
 
 
@@ -53,7 +53,7 @@
 
     NameError:
     uninitialized constant Point
-    # ./spec/point_spec.rb:3:in `<top (required)>'
+    \# ./spec/point_spec.rb:3:in `<top (required)>'
     No examples found.
 
 
@@ -77,12 +77,12 @@
     $cat spec/point\_spec.rb
     require 'point'
 
-    # Permite agrupar pruebas
+    \# Permite agrupar pruebas
     describe Point do
 
-      # Descrbe la prueba 
+      \# Descrbe la prueba 
       it "Se instancia un punto con coordenadas x, y" do
-         # Define la expectativa
+         \# Define la expectativa
          expect(Point.new(0,0)).not_to eq(nil) #matcher
       end
     end
@@ -97,9 +97,9 @@
 
        ArgumentError:
          wrong number of arguments (given 2, expected 0)
-       # ./spec/point_spec.rb:9:in `initialize'
-       # ./spec/point_spec.rb:9:in `new'
-       # ./spec/point_spec.rb:9:in `block (2 levels) in <top (required)>'
+       \# ./spec/point_spec.rb:9:in `initialize'
+       \# ./spec/point_spec.rb:9:in `new'
+       \# ./spec/point_spec.rb:9:in `block (2 levels) in <top (required)>'
 
     Finished in 0.00493 seconds (files took 0.14996 seconds to load)
     1 example, 1 failure
@@ -131,13 +131,13 @@
     $cat spec/point\_spec.rb
     require 'point'
 
-    # Permite agrupar pruebas
+    \# Permite agrupar pruebas
     describe Point do
 
-      # Descrbe la prueba 
+      \# Descrbe la prueba 
       it "Se instancia un punto con coordenadas x, y" do
-      # Define la expectativa
-        expect(Point.new(0,0)).not_to eq(nil) #matcher
+      \# Define la expectativa
+        expect(Point.new(0,0)).not_to eq(nil) \#matcher
       end
       it "Se debe poder acceder a las coordenadas con los getters" do
         expect(Point.new(0,0).x).to eq(0) 
@@ -158,7 +158,7 @@
 
        NoMethodError:
        undefined method `x' for #<Point:0x0000555f34ecd338 @x=0, @y=0>
-       # ./spec/point_spec.rb:12:in `block (2 levels) in <top (required)>'
+       \# ./spec/point_spec.rb:12:in `block (2 levels) in <top (required)>'
 
     Finished in 0.00306 seconds (files took 0.15878 seconds to load)
     2 examples, 1 failure
@@ -191,12 +191,12 @@
 
     require 'point'
 
-    # Permite agrupar pruebas
+    \# Permite agrupar pruebas
     describe Point do
 
-    # Descrbe la prueba 
+    \# Descrbe la prueba 
       it "Se instancia un punto con coordenadas x, y" do
-        # Define la expectativa
+        \# Define la expectativa
         expect(Point.new(0,0)).not_to eq(nil) #matcher
       end
       it "Se debe poder acceder a las coordenadas con los getters" do
@@ -223,7 +223,7 @@
             got: "#<Point:0x00005585672f47b0>"
 
        (compared using ==)
-       # ./spec/point_spec.rb:16:in `block (2 levels) in <top (required)>'
+       \# ./spec/point_spec.rb:16:in `block (2 levels) in <top (required)>'
 
        Finished in 0.0275 seconds (files took 0.16281 seconds to load)
        3 examples, 1 failure
